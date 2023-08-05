@@ -15,14 +15,10 @@ const connect = function () {
   });
 
   conn.on("connect", (data) => {
+    console.log("Connected!")
     conn.write('Name: Cas');
-    for (let i = 0; i < 5; i++){
-      setTimeout(() => {
-        conn.write('Move: up');
-      }, i * 3000)
-    }
   })
-  
+
   return conn;
 };
 
